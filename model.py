@@ -15,6 +15,7 @@ from keras.layers import Dense, LSTM, Bidirectional, Embedding, Dropout
 from keras.callbacks import ModelCheckpoint
 
 
+
 def load_dataset(filename):
   df = pd.read_csv(filename, encoding = "latin1", names = ["Sentence", "Intent"])
   print(df.head())
@@ -52,6 +53,7 @@ stemmer = LancasterStemmer()
 
 
 def cleaning(sentences):
+  print("testing")
   words = []
   for s in sentences:
     clean = re.sub(r'[^ a-z A-Z 0-9]', " ", s)
